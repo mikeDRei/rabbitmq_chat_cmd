@@ -1,7 +1,9 @@
 defmodule ChatCmd.Publisher do
   import System
+
   use GenServer
 
+  alias ChatCmd.Connection.Host
   def init(_) do
     {:ok, nil}
   end
@@ -13,6 +15,7 @@ defmodule ChatCmd.Publisher do
 
 
   def start do
+    Host.env()
     {:ok, connection} = AMQP.Connection.open(get_env("VHOST"))
     {:ok, channel} = AMQP.Channel.open(connection)
 
