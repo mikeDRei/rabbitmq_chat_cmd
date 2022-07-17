@@ -23,10 +23,6 @@ iex -S mix
 ```
 
 ```bash
-ChatCmd.Connection.Host.env() 
-```
-
-```bash
 ChatCmd.Publisher.start()
 ```
 # Run Consumer
@@ -34,10 +30,6 @@ ChatCmd.Publisher.start()
 
 ```bash
 iex -S mix
-```
-
-```bash
-ChatCmd.Connection.Host.env() 
 ```
 
 ```bash
