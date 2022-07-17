@@ -11,12 +11,9 @@ mix deps.get
 ```bash
 mix deps.compile
 ```
-```bash
-iex -S mix
-```
 
 # Recommendation
-## run the publisher and consumer on separate terminals so you can send and view messages
+## Run the publisher and consumer on separate terminals so you can send and view messages
 
 # Run Publisher
 ## The publisher will be responsible for sending messages to the channel
