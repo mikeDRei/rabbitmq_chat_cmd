@@ -1,7 +1,9 @@
 defmodule ChatCmd.Consumer do
   import System
+
   use GenServer
 
+  alias ChatCmd.Connection.Host
   def init(_) do
     {:ok, nil}
   end
@@ -12,6 +14,8 @@ defmodule ChatCmd.Consumer do
   end
 
   def start() do
+    Host.env()
+
     {:ok, connection} = AMQP.Connection.open(get_env("VHOST"))
     {:ok, channel} = AMQP.Channel.open(connection)
 
